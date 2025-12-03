@@ -4,9 +4,12 @@ import toast from "react-hot-toast";
 
 function ListPage() {
   const [tours, setTours] = useState([]);
+<<<<<<< HEAD
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [activeFilter, setActiveFilter] = useState("all");
+=======
+>>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
 
   useEffect(() => {
     fetch("http://localhost:3000/tours")
@@ -18,7 +21,13 @@ function ListPage() {
   const handleDelete = (id) => {
     if (!confirm("Bạn có chắc muốn xóa tour này?")) return;
 
+<<<<<<< HEAD
     fetch(`http://localhost:3000/tours/${id}`, { method: "DELETE" })
+=======
+    fetch(`http://localhost:3000/tours/${id}`, {
+      method: "DELETE",
+    })
+>>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
       .then(() => {
         toast.success("Xóa thành công!");
         setTours(tours.filter((t) => t.id !== id));
@@ -26,6 +35,7 @@ function ListPage() {
       .catch(() => toast.error("Lỗi khi xóa!"));
   };
 
+<<<<<<< HEAD
   const handleToggleActive = (tour) => {
     const updated = { ...tour, active: !tour.active };
 
@@ -59,10 +69,13 @@ function ListPage() {
     return matchSearch && matchCategory && matchActive;
   });
 
+=======
+>>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
   return (
     <div className="p-6">
       <h1 className="text-3xl font-semibold mb-6">Danh sách Tour</h1>
 
+<<<<<<< HEAD
       <div className="mb-6 grid grid-cols-1 md:grid-cols-3 gap-4">
         <input
           type="text"
@@ -93,6 +106,8 @@ function ListPage() {
         </select>
       </div>
 
+=======
+>>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
       <div className="overflow-x-auto">
         <table className="w-full border border-gray-300 rounded-lg text-left">
           <thead className="bg-gray-200">
@@ -111,7 +126,11 @@ function ListPage() {
           </thead>
 
           <tbody>
+<<<<<<< HEAD
             {filteredTours.map((tour) => (
+=======
+            {tours.map((tour) => (
+>>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
               <tr key={tour.id} className="hover:bg-gray-50">
                 <td className="px-4 py-2 border">{tour.id}</td>
 
@@ -138,6 +157,7 @@ function ListPage() {
                 <td className="px-4 py-2 border">{tour.category}</td>
 
                 <td className="px-4 py-2 border">
+<<<<<<< HEAD
                   <label className="inline-flex items-center cursor-pointer">
                     <input
                       type="checkbox"
@@ -153,6 +173,13 @@ function ListPage() {
                                     peer-checked:after:translate-x-full"
                     ></div>
                   </label>
+=======
+                  {tour.active ? (
+                    <span className="text-green-600 font-semibold">✔</span>
+                  ) : (
+                    <span className="text-red-600 font-semibold">✘</span>
+                  )}
+>>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
                 </td>
 
                 <td className="px-4 py-2 border flex flex-col gap-2">
@@ -172,6 +199,7 @@ function ListPage() {
                 </td>
               </tr>
             ))}
+<<<<<<< HEAD
 
             {filteredTours.length === 0 && (
               <tr>
@@ -180,6 +208,8 @@ function ListPage() {
                 </td>
               </tr>
             )}
+=======
+>>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
           </tbody>
         </table>
       </div>
