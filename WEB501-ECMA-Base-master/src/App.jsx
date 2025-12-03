@@ -24,7 +24,6 @@ function App() {
     toast.success("Đăng xuất thành công!");
   };
 
-=======
 import { Toaster } from "react-hot-toast";
 import { Link, Routes } from "react-router-dom";
 import ListPage from "./pages/List";
@@ -35,24 +34,19 @@ import EditPage from "./pages/Edit";
 
 
 function App() {
->>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
   return (
     <>
       <nav className="bg-blue-600 text-white shadow">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-<<<<<<< HEAD
           <Link
             to={isLoggedIn ? "/list" : "/login"}
             className="text-xl font-semibold"
           >
-=======
           <Link to="#" className="text-xl font-semibold">
->>>>>>> 680dd63bebb96bed9a7b1b97360f006bf1a4ed89
             <strong>WEB501 App</strong>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-<<<<<<< HEAD
             <Link
               to={isLoggedIn ? "/list" : "/login"}
               className="hover:text-gray-200"
